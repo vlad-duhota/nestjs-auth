@@ -55,4 +55,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Stay in touch
 
 - Author - Dukhota Vladyslav
+- Email - vladyslavduhota@gmail.com
 <!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
