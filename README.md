@@ -2,60 +2,50 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# 🛠️ Custom Authentication API with NestJS, MongoDB & JWT
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project is a custom-built API developed using **NestJS**, designed to handle core authentication functionality, including **user registration**, **login**, and **user data management**. The backend logic is fully powered by **MongoDB** as the primary database, with seamless integration through **Mongoose** and **Typegoose** for schema modeling and type safety.
 
-## Description
+## ✅ Key Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **User Registration & Login**: Secure endpoints to register new users and authenticate existing ones.
+- **Password Hashing**: User passwords are securely hashed using industry-standard algorithms (e.g., bcrypt).
+- **JWT Authentication**: Upon successful login or registration, a **JWT token** is generated and returned to the client, enabling secure and stateless session management.
+- **MongoDB Integration**: User data is stored and managed via **MongoDB**, using Mongoose and Typegoose for a type-safe and structured approach to data modeling.
+- **Modular Structure**: Built with a clean, modular architecture following NestJS best practices, making it scalable and maintainable.
+- **Environment Configs**: API secrets, DB credentials, and other environment variables are handled through `.env` files for flexibility and security.
+
+## 📦 Technologies Used
+
+- **NestJS** – Progressive Node.js framework for building efficient and scalable server-side applications.
+- **MongoDB** – NoSQL database for storing user data.
+- **Mongoose + Typegoose** – ODM and type-safe modeling for MongoDB.
+- **JWT (jsonwebtoken)** – For secure authentication and token management.
+- **Bcrypt** – For secure password hashing.
+
+## 🎯 Usage Example
+
+Frontend can send requests to the following endpoints:
+
+- `POST /api/auth/register` – Create a new user
+- `POST /api/auth/login` – Log in and receive a JWT token
+
+The JWT token can be stored in local storage or cookies and used in headers.
 
 ## Installation
 
 ```bash
-$ npm install
+$ yarn
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+$ yarn dev
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+# build
+$ yarn build
 ```
 
 ## Support
@@ -64,10 +54,5 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- Author - Dukhota Vladyslav
+<!-- - Website - [https://nestjs.com](https://nestjs.com/) -->
