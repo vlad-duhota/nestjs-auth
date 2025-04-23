@@ -1,9 +1,11 @@
+// app.module.ts
 import { Module } from '@nestjs/common'
 import { ConfigModule, ConfigService } from '@nestjs/config'
 import { TypegooseModule } from 'nestjs-typegoose'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { AuthModule } from './auth/auth.module'
+import { BlogModule } from './blog/blog.module'
 import { getMongoConfig } from './config/mongo.config'
 
 @Module({
@@ -15,6 +17,7 @@ import { getMongoConfig } from './config/mongo.config'
 			useFactory: getMongoConfig,
 		}),
 		AuthModule,
+		BlogModule
 	],
 	controllers: [AppController],
 	providers: [AppService],

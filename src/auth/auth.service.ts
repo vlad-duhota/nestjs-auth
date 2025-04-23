@@ -52,6 +52,12 @@ export class AuthService {
 		}
 	}
 
+	async profile(user: UserModel) {
+		return {
+			user: this.returnUserFields(user)
+		}
+	}
+
 	async validateUser(dto: AuthDto) {
 		const user = await this.UserModel.findOne({ email: dto.email })
 		if (!user) throw new UnauthorizedException('User not found')

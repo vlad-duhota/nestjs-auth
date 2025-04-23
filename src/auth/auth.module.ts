@@ -26,5 +26,6 @@ import { getJwtConfig } from 'src/config/jwt.config'
 	],
 	providers: [AuthService],
 	controllers: [AuthController],
+	exports: [JwtModule],
 })
 export class AuthModule {}
