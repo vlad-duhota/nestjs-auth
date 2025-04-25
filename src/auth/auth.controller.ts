@@ -3,6 +3,7 @@ import {
 	Controller,
 	Get,
 	HttpCode,
+	Param,
 	Post,
 	Req,
 	UseGuards,
@@ -29,6 +30,13 @@ export class AuthController {
 	@Post('register')
 	async register(@Body() dto: AuthDto) {
 		return this.AuthService.register(dto)
+	}
+
+	@UsePipes(new ValidationPipe())
+	@HttpCode(200)
+	@Get('user/:id')
+	async users(@Param('id') id) {
+		return this.AuthService.user(id)
 	}
 
 	@UseGuards(JwtAuthGuard)

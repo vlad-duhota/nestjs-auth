@@ -2,6 +2,7 @@ import {
 	Body,
 	Controller,
 	Get,
+	Param,
 	Post,
 	Req,
 	UseGuards,
@@ -23,10 +24,10 @@ export class BlogController {
 		return this.BlogService.create(dto, req.user._id)
 	}
 
-	@UseGuards(JwtAuthGuard)
-	@Get('/get')
-	async getMyPosts(@Req() req) {
-		return this.BlogService.findAllByUser(req.user._id)
+	// @UseGuards(JwtAuthGuard)
+	@Get('/get/:id')
+	async getMyPosts(@Param('id') id) {
+		return this.BlogService.findPost(id)
 	}
 
 	@Get('/getAll')

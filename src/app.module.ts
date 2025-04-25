@@ -7,6 +7,8 @@ import { AppService } from './app.service'
 import { AuthModule } from './auth/auth.module'
 import { BlogModule } from './blog/blog.module'
 import { getMongoConfig } from './config/mongo.config'
+import { UploadModule } from './upload/upload.module';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
 	imports: [
@@ -17,7 +19,9 @@ import { getMongoConfig } from './config/mongo.config'
 			useFactory: getMongoConfig,
 		}),
 		AuthModule,
-		BlogModule
+		BlogModule,
+		UploadModule,
+		CommentModule
 	],
 	controllers: [AppController],
 	providers: [AppService],

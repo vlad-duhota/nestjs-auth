@@ -1,6 +1,5 @@
-// blog.model.ts
 import { prop, Ref } from '@typegoose/typegoose'
-import { UserModel } from 'src/user/user.model'
+import { UserModel } from './user.model'
 
 export class BlogModel {
 	@prop({ required: true })

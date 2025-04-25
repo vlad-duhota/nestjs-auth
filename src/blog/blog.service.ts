@@ -1,7 +1,6 @@
-// blog.service.ts
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from 'nestjs-typegoose'
-import { BlogModel } from '../user/blog.model'
+import { BlogModel } from '../models/blog.model'
 import { ModelType } from '@typegoose/typegoose/lib/types'
 import { BlogDto } from './blog.dto'
 
@@ -18,8 +17,13 @@ export class BlogService {
 		})
 	}
 
-	async findAllByUser(userId: string) {
-		return this.BlogModel.find({ userId })
+	// async findAllByUser(userId: string) {
+	// 	return this.BlogModel.find({ userId })
+	// }
+
+
+	async findPost(id: string) {
+		return this.BlogModel.findOne({_id: id})
 	}
 
 	async findAll () {

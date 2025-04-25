@@ -2,7 +2,7 @@ import { CanActivate, ExecutionContext, Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { Reflector } from '@nestjs/core'
 import { InjectModel } from 'nestjs-typegoose'
-import { UserModel } from 'src/user/user.model'
+import { UserModel } from '../models/user.model'
 import { ModelType } from '@typegoose/typegoose/lib/types'
 
 @Injectable()

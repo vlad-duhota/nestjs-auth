@@ -7,7 +7,7 @@ import { JwtService } from '@nestjs/jwt'
 import { ModelType } from '@typegoose/typegoose/lib/types'
 import { compare, genSalt, hash } from 'bcryptjs'
 import { InjectModel } from 'nestjs-typegoose'
-import { UserModel } from 'src/user/user.model'
+import { UserModel } from '../models/user.model'
 import { AuthDto } from './auth.dto'
 
 @Injectable()
@@ -76,6 +76,12 @@ export class AuthService {
 		})
 
 		return { accessToken }
+	}
+
+	async user(id) {
+		const user = await this.UserModel.findOne({_id: id})
+
+		return user
 	}
 
 	returnUserFields(user: UserModel) {
